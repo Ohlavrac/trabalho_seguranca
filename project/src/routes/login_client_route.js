@@ -15,18 +15,17 @@ router.use(session({
 }));
 
 router.get("/login", (req, res) => {
-    res.send("LOGIN PAGE")
+    res.render("login.html")
 });
 
 router.post("/login", async (req, res) => {
-    const {
-        email,
-        password
-    } = req.body;
+    const email = req.body.email;
+    const password = req.body.password; 
+
 
     const loginData = await loginClient(email, password);
 
-    console.log(loginData)
+    console.log(">>", loginData ," ", email , password)
 
     if (loginData == null) {
         

@@ -1,5 +1,6 @@
 const express = require("express");
 const server = express();
+const path = require("path");
 const session = require("express-session");
 const port = 3000;
 
@@ -13,6 +14,10 @@ server.use(session({
     resave: true,
     saveUninitialized: true,
 }));
+
+server.engine('html', require('ejs').renderFile);
+server.set('view engine', 'html');
+server.set('views', path.join(__dirname, '/pages'));
 
 server.get("/", (req, res) => {
     res.send("Inicio do projeto de segurança para mostrar criptografia de senha");
