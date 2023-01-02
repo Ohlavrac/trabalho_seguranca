@@ -2,7 +2,8 @@ const {hash} = require("bcrypt");
 const prisma = require("../database/database.js");
 
 const registerNewClient = async (
-    email,
+    name,
+	email,
     password,
 ) => {
     const clientExist = await prisma.user.findFirst({
@@ -23,6 +24,7 @@ const registerNewClient = async (
         data: {
             email: email,
             password: safePassword,
+            name: name
         }
     });
 

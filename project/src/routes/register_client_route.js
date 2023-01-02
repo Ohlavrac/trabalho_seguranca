@@ -1,23 +1,43 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
+const session = require("express-session");
 
 const registerNewClient = require("../modules/register_client.js");
 
-router.post("/register", async (req, res) => {
-    const {
-        email,
-        password
-    } = req.body;
+const bodyParser = require("body-parser");
+router.use(bodyParser.urlencoded({extended:false}));
+router.use(bodyParser.json());
 
-    const result = await registerNewClient(email, password);
+router.use(session({
+    secret: "wkndawdnwouidnawdnawonds", //é uma chave que cria uma sessão
+    resave: true,
+    saveUninitialized: true,
+}));
+
+
+router.get("/register", (req, res) => {
+    res.render("register.html");
+});
+
+router.post("/register", async (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password
+
+    console.log(password)
+    console.log(email)
+    console.log(name)
+
+    const result = await registerNewClient(name, email, password);
 
     console.log(result);
 
     if (result == null) {
-        return res.status(400).json({"message": "Register Error"});
+        res.status(400).json({"message": "Register Error"});
     } else {
-        return res.status(200).json(result);
+        //res.status(200).json(result);
+        res.redirect("/login");
     }
 });
 

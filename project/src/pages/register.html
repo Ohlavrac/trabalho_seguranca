@@ -15,14 +15,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md -5  rounded-3 bg-light action=" /login" method="post">
+                    <form class="p-4 p-md -5  rounded-3 bg-light action=" /register" method="post">
                         <div clas="m-5 text-center">
                             <h1>REGISTRO DE CONTA</h1>
                         </div>
                         <form>
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nome Completo</label>
+                                <input type="text" name="name" class="form-control" id="inputName" aria-describedby="emailHelp"
+                                    required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Endereço de e-mail</label>
-                                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                                <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
                                     required>
                                 <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais
                                     ninguém.
@@ -30,7 +35,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="inputPassword" required>
+                                <input type="password" name="password" class="form-control" id="inputPassword" required>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkboxTermos" class="form-check-input" id="checkTermnos">
@@ -39,8 +44,10 @@
                                     <a href="#">Termos de uso</a>.
                             </div>
                             <div class btn-1>
-                                <button class="w-100 btn btn-lg btn-primary btn-block" type="submit">Criar
+                                <a href="/login">
+                                    <button class="w-100 btn btn-lg btn-primary btn-block" type="submit">Criar
                                     conta</button>
+                                </a>
                             </div>
                         </form>
                         <script

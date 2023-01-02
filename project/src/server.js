@@ -19,10 +19,6 @@ server.engine('html', require('ejs').renderFile);
 server.set('view engine', 'html');
 server.set('views', path.join(__dirname, '/pages'));
 
-server.get("/", (req, res) => {
-    res.send("Inicio do projeto de segurança para mostrar criptografia de senha");
-});
-
 server.use(homeRoute);
 server.use(registerClientRoute);
 server.use(loginClientRoute);
