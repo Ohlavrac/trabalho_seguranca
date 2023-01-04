@@ -1,19 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Ola '-'</h1>
-    <p>Criptografia usada: Para criptografia de senha foi utilizado a biblioteca bycript com metodo hash, usando uma base 8</p>
-    <p>A senha do usuario criptografada é:
-        <%=loginData.password%>
-    </p>
-    <a href="/logout">
-        <button type="button" class="btn btn-dark">Sair</button>
-    </a>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div
+      class="bg-image"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url('https://img.olhardigital.com.br/wp-content/uploads/2021/05/Senha-e1620309081560.jpg');
+        height: 100vh;
+        -webkit-backdrop-size: cover;
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      >
+      <div class="container">
+        <div
+          class="pt-5"
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+          "
+        >
+          <h1
+            class="font-size60px"
+            style="
+              color: #fdfdfd;
+              font-size: 50px;
+              text-transform: uppercase;
+              margin-bottom: 15px;
+            "
+          >
+            A senha do usuário criptografada é
+          </h1>
+          <p class="font-size50px text-light">sghighisjigjsllgrs548@#4</p>
+          <form action="/" method="post">
+            <div class="mb-3">
+              <p class="banner-btn">
+                <div class btn-1>  
+                  <button class="w-25 btn btn-lg btn-primary btn-block" type="submit">Sair</button>
+                </div>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer class="bg-light text center text-lg-start">
+    <!-- Copyright -->
+
+    <!--JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </footer>
 </html>
